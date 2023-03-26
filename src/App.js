@@ -6,14 +6,16 @@ import Coins from './components/Coins/Coins';
 import {
   createBrowserRouter,
   RouterProvider,
-  
- 
+
+
 } from "react-router-dom";
 import RootLayout from './components/Routes/RootLayout';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 import CoinDetails from './components/CoinDetails/CoinDetails';
+import UsAddress from './components/Contact/UsAddress';
+import BdAddress from './components/Contact/BdAddress';
 
 
 
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout></RootLayout>,
-    errorElement:<NotFound></NotFound>,
+    errorElement: <NotFound></NotFound>,
 
     children: [
       {
@@ -39,6 +41,16 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+        children: [
+          {
+            path: "bd-address",
+            element: <BdAddress></BdAddress>
+          },
+          {
+            path:"us-address",
+            element:<UsAddress></UsAddress>
+          },
+        ],
       },
       {
         path: "/about",
