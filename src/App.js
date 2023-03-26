@@ -13,6 +13,8 @@ import RootLayout from './components/Routes/RootLayout';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
+import CoinDetails from './components/CoinDetails/CoinDetails';
+
 
 
 const router = createBrowserRouter([
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/coins",
         element: <Coins></Coins>,
+      },
+      {
+        path: "/coin-details/:id",
+        element: <CoinDetails></CoinDetails>,
       },
       {
         path: "/contact",
